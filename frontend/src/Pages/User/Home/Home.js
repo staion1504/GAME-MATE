@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Home.module.css'
 import PostList from '../UserFeed/PostList';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar/Navbar';
 
 const Home = () => {
 
@@ -18,7 +18,9 @@ const Home = () => {
 
   return (
     < >
-    <div style={styles.app}>
+    {/* <div className={classes.container1} ></div> */}
+    <div  style={styles.app}>
+      
         <Navbar/> 
     <PostList posts={posts} />
   </div>

@@ -18,7 +18,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '1rem',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'transparent'
   },
 };
 

@@ -1,0 +1,27 @@
+/* src/components/Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #20232a; /* Dark background color */
+    color: white; /* White text color */
+  }
+  
+  .navbar_logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .navbar_links a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #61dafb; /* Light blue color */
+    font-size: 1rem;
+  }
+  
+  .navbar_links a:hover {
+    color: white; /* White color on hover */
+  }
+  
