@@ -1,5 +1,6 @@
 // src/components/SessionPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './SessionPage.module.css';
 import Navbar from '../Navbar/Navbar';
 import Button from 'react-bootstrap/Button';
@@ -7,7 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
   const [sessionName, setSessionName] = useState('');
-
+  
   const handleNext = () => {
     props.onHide();
     props.onCreateSession(sessionName);
@@ -41,34 +42,10 @@ function MyVerticallyCenteredModal(props) {
 
 const SessionPage = () => {
   const [modalShow, setModalShow] = useState(false);
-
-  useEffect(() => {
-    // Clear the session flag on component mount (for safety)
-    window.addEventListener('beforeunload', () => {
-      localStorage.removeItem('sessionOpen');
-    });
-
-    return () => {
-      window.removeEventListener('beforeunload', () => {
-        localStorage.removeItem('sessionOpen');
-      });
-    };
-  }, []);
+  const navigate=useNavigate();
 
   const handleCreateSession = (sessionName) => {
-    if (localStorage.getItem('sessionOpen')) {
-      alert('You already have an open session. Please close it before creating a new one.');
-      return;
-    }
-
-    // Set the session flag
-    localStorage.setItem('sessionOpen', 'true');
-
-    // Open the session in a new tab
     const newTab = window.open(`/session/${sessionName}`, '_blank');
-    newTab.onbeforeunload = () => {
-      localStorage.removeItem('sessionOpen');
-    };
     newTab.focus();
   };
 
