@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 import AgoraRTC from "agora-rtc-sdk-ng";
 
 let rtc = {
@@ -14,7 +16,7 @@ let rtc = {
 
 let options = {
   // Pass your app ID here.
-  appId: "bc82c4b61fc64d8987727a0ae2590557"  ,
+  appId: process.env.REACT_APP_APPID ,
   // Set the channel name.
   channel: "Session",
   // Use a temp token
@@ -75,8 +77,10 @@ async function startBasicCall() {
 
 
 
-
 const ChatWindow = ({ chat, sessionName }) => {
+  
+  
+
   return (
     <div className={styles.chatWindow}>
       <div className={styles.chatHeader}>
