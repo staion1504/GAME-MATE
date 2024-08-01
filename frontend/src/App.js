@@ -10,12 +10,17 @@ import './App.module.css';
 import Home from "./Pages/User/Home/Home";
 import SessionPage from "./Pages/User/Session/SessionPage";
 import Chat from "./Pages/User/Session/Chat/Chat";
+import SignInForm from "./Pages/Auth/SignInForm";
 
 const router = createBrowserRouter([
   
   {
     path: "/",
     element: <Home/>
+  },
+  {
+    path: "/login",
+    element: <SignInForm />
   },
   {
     path: "/SessionPage",

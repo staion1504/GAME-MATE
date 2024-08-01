@@ -20,9 +20,10 @@ const Navbar = () => {
         
         <Link to='/'> Home</Link>
         <Link to='/SessionPage'> New Session</Link>
-        <Link to='/freinds'> Find freinds</Link>
+        <Link to='/friends'> Find freinds</Link>
         <Link to='/YourPosts'>Your Posts</Link>
         <Link to='/Profile'>Profile</Link>
+        <Link to='/login' >Login</Link>
         
         
 
